@@ -1,5 +1,19 @@
+html {
+    display: table;
+    margin: auto;
+}
+
+body{
+    vertical-align: middle;
+}
+
+
 .container{
+    padding: 40px;
     text-align: center;
+    background-color: rgb(225, 225, 225);
+    border-radius: 3%;
+    
 }
 
 .body input{
@@ -12,6 +26,6 @@
 }
 
 .footer{
-    margin-top: 25px;
+    margin-top: 20px;
     font-size: 20px;
 }
