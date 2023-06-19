@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $(`#cpf`).inputmask('999.999.999-99');
+    $('#cpf').inputmask('999.999.999-99');
 });
 
 function validaCPF(){
@@ -18,17 +18,17 @@ function validaCPF(){
 
     const digito1 = calcularDigitoVerificador(cpf,1);
     if (!digito1){
-        mostraResultado('CPF inválido - ${cpfFormatado}','red');
+        mostraResultado(`CPF inválido - ${cpfFormatado}`,'red');
         return;
     }
 
     const digito2 = calcularDigitoVerificador(cpf,2);
     if (!digito2){
-        mostraResultado('CPF inválido - ${cpfFormatado}','red');
+        mostraResultado(`CPF inválido - ${cpfFormatado}`,'red');
         return;
     }
     
-    mostraResultado('CPF Válido - ${cpfFormatado', 'green');
+    mostraResultado(`CPF Válido - ${cpfFormatado}`, 'green');
 }
 
 
@@ -60,6 +60,11 @@ function mostraResultado(texto, cor){
 
     span.innerHTML = texto;
     span.style.color = cor;
+}
+
+function limpaResultado(){
+    const span = document.getElementById('resultado');
+    span.innerHTML = "";
 }
 
 function verificaDigitosRepetidos(cpf){
